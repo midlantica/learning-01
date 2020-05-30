@@ -7,130 +7,23 @@ namespace bangazon
 	{
 		static void Main(string[] args)
 		{
-		// Random
-		Random random = new Random();
+		// Dictionary
 
-		List<int> numbersDeux = new List<int> {
-			random.Next(6),
-			random.Next(6),
-			random.Next(6),
-			random.Next(6),
-			random.Next(6),
-			random.Next(6),
+		// JS
+		Dictionary<string, int> toysSold = new Dictionary<string, int>() {
+			{"Hot Wheels", 344},
+			{"Legos", 763},
+			{"Gaming Consoles", 551},
+			{"Board Games", 298}
 		};
 
-		for (int i = 0; i < numbersDeux.Count; i++)
-		{
-			// Determine if the current loop index is contained inside of the `numbersDeux` list. Print a message to the console indicating whether the index is in the list.
-			if (i > 0 && i < 5) {
-				Console.WriteLine("Numbers list contains " + numbersDeux[i]);
-			} else {
-				Console.WriteLine("Numbers list does not contain " + numbersDeux[i]);
-			}
-		};
-		Console.WriteLine("---------------------------");
-
-
-			// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-			// DateTime is the type of the purchaseData variable.
-			DateTime purchaseDate=DateTime.Now;
-			string lastName="Smith";
-			var firstName="Bill";
-
-			Console.WriteLine($"{firstName} {lastName} purchased on {purchaseDate}");
-
-			// #############
-			// Products
-			List<string> products = new List<string>() {
-				"Motorcycle",
-				"Sofa",
-				"Sandals",
-				"Omega Watch",
-				"iPhone"
-			};
-
-			foreach (string product in products) {
-				Console.WriteLine(product);
-			};
-
-			Console.WriteLine("#########");
-
-			for (int i=0; i<products.Count; i++) {
-				Console.WriteLine(products[i]);
-			}
-
-			foreach(string product in products){
-				if(product.Length < 5){
-					Console.WriteLine($"{product} has a short name.");
-				} else if (product.Length < 10) {
-					Console.WriteLine($"{product} has a medium-sized name.");
-				} else {
-					Console.WriteLine($"{product} has a long name.");
-				}
-			}
-
-			List<string> students = new List<string>() {
-				"Megan", "Damon", "Chase", "Tekisha",
-				"Castle", "Mark", "Keith", "Adam",
-				"Patrick", "Hannah", "Mike"
-			};
-
-			// Can't do this easily with a base array
-			students.Add("Melanie");
-			students.Insert(3, "Simon");
-
-			if (students.Contains("Chase")) {
-				Console.WriteLine("Must be cohort 13");
-			}
-
-			// This looks a lot like JavaScript!
-			students.ForEach(x => Console.WriteLine(x));
-
-			// >>>>>>>>>>>>
-			List<int> yearsBorn = new List<int>() {
-				1967, 1969, 1972
-			};
-
-			Console.WriteLine(string.Join(", ", yearsBorn));
-
-			foreach (int x in yearsBorn)
+		toysSold.Add("Bicycles", 87);
+			foreach(KeyValuePair<string, int> toy in toysSold)
 			{
-				Console.WriteLine(x);
+					Console.WriteLine($"We sold {toy.Value} units of {toy.Key}");
 			}
 
-			// >>>>>>>>>>>
-			int[] itemsSold = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-			Console.WriteLine(string.Join(", ", itemsSold));
-
-			// >>>>>>>
-			List<string> planetList = new List<string>(){"Mercury", "Mars"};
-			planetList.Add("Jupiter");
-			planetList.Add("Saturn");
-
-			List<string> planetLast = new List<string>(){"Uranus", "Neptune"};
-			planetList.AddRange(planetLast);
-			Console.WriteLine("---------------\nPlanets:");
-			Console.WriteLine((string.Join(", ", planetList)) + ".");
-
-			List<string> venusEarth = new List<string>() { "Venus", "Earth" };
-			planetList.InsertRange(1, venusEarth);
-			Console.WriteLine("---------------\nMissing planets added:");
-			Console.WriteLine((string.Join(", ", planetList)) + ".");
-
-			planetList.Add("Pluto");
-			Console.WriteLine("---------------\nPluto added:");
-			Console.WriteLine((string.Join(", ", planetList)) + ".");
-
-			List<string> rockyPlanets = new List<string>() { };
-			rockyPlanets = planetList.GetRange(0,4);
-			Console.WriteLine("---------------\nRocky planets separated out:");
-			Console.WriteLine((string.Join(", ", rockyPlanets)) + ".");
-
-			planetList.Remove("Pluto");
-			Console.WriteLine("---------------\nPluto removed:");
-			Console.WriteLine((string.Join(", ", planetList)) + ".");
-
-		}
+    }
 	}
 }
 
