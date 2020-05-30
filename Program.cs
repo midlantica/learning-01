@@ -7,31 +7,29 @@ namespace bangazon
 	{
 		static void Main(string[] args)
 		{
-			// Random
-			Random random = new Random();
+		// Random
+		Random random = new Random();
 
-			List<int> numbersDeux = new List<int> {
-				random.Next(6),
-				random.Next(6),
-				random.Next(6),
-				random.Next(6),
-				random.Next(6),
-				random.Next(6),
-			};
-
-			for (int i = 0; i < numbersDeux.Count; i++)
-			{
-				// Determine if the current loop index is contained inside of the `numbers` list. Print a message to the console indicating whether the index is in the list.
-			// if (int numbers) {
-			//   Console.WriteLine("Print " + i);
-			// } else {
-			//   Console.WriteLine("Else..." + i);
-			// }
-
-			Console.WriteLine("numbersDeux[i]");
+		List<int> numbersDeux = new List<int> {
+			random.Next(6),
+			random.Next(6),
+			random.Next(6),
+			random.Next(6),
+			random.Next(6),
+			random.Next(6),
 		};
 
-		Console.WriteLine("----------------");
+		for (int i = 0; i < numbersDeux.Count; i++)
+		{
+			// Determine if the current loop index is contained inside of the `numbersDeux` list. Print a message to the console indicating whether the index is in the list.
+			if (i > 0 && i < 5) {
+				Console.WriteLine("Numbers list contains " + numbersDeux[i]);
+			} else {
+				Console.WriteLine("Numbers list does not contain " + numbersDeux[i]);
+			}
+		};
+		Console.WriteLine("---------------------------");
+
 
 			// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 			// DateTime is the type of the purchaseData variable.
