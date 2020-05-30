@@ -5,33 +5,79 @@ namespace bangazon
 {
 	class Program
 	{
-	static void Main(string[] args)
-	{
-		// DateTime is the type of the purchaseData variable.
-		DateTime purchaseDate=DateTime.Now;
+		static void Main(string[] args)
+		{
+			// DateTime is the type of the purchaseData variable.
+			DateTime purchaseDate=DateTime.Now;
+			// string lastName="Smith";
+			// var firstName="Bill";
 
-		/*
-		string is the type of the lastName variable. It
-		tells the compiler that the lastName variable can
-		ONLY hold a string value.
-		*/
-		string lastName="Smith";
+			// Console.WriteLine($"{firstName} {lastName} purchased on {purchaseDate}");
 
-		/*
-		C# now supports implicitly typing of a variable. The
-		type of the variable will be determined, by the
-		compiler, at compile time.
-		*/
-		var firstName="Bill";
+			List<string> products = new List<string>() {
+        "Motorcycle",
+        "Sofa",
+        "Sandals",
+        "Omega Watch",
+        "iPhone"
+      };
 
-		/*
-		String interpolation in C# is similar to string interpolation in JavaScript,
-		but there is a different syntax.
+      // foreach (string product in products) {
+      //   Console.WriteLine(product);
+      // };
 
-		An equivalent statement in JavaScript would be:
-		console.log(`${firstName} ${lastName} purchased on ${purchaseDate}`);
-		*/
-		Console.WriteLine($"{firstName} {lastName} purchased on {purchaseDate}");
-	}
+      // Console.WriteLine("#########");
+
+      // for (int i=0; i<products.Count; i++) {
+      //   Console.WriteLine(products[i]);
+      // }
+
+      // foreach(string product in products){
+      //   if(product.Length < 5){
+      //     Console.WriteLine($"{product} has a short name.");
+      //   } else if (product.Length < 10) {
+      //     Console.WriteLine($"{product} has a medium-sized name.");
+      //   } else {
+      //     Console.WriteLine($"{product} has a long name.");
+      //   }
+      // }
+
+      // >>>>>>>>>>>
+
+      List<string> students = new List<string>() {
+        "Megan", "Damon", "Chase", "Tekisha",
+        "Castle", "Mark", "Keith", "Adam",
+        "Patrick", "Hannah", "Mike"
+      };
+
+      // Can't do this easily with a base array
+      students.Add("Melanie");
+      students.Insert(3, "Simon");
+
+      // if (students.Contains("Chase")) {
+      //   Console.WriteLine("Must be cohort 13");
+      // }
+
+      // This looks a lot like JavaScript!
+      // students.ForEach(x => Console.WriteLine(x));
+
+      // >>>>>>>>>>>>
+      List<int> yearsBorn = new List<int>() {
+        1967, 1969, 1972
+      };
+
+      Console.WriteLine(string.Join(", ", yearsBorn));
+
+      foreach (int x in yearsBorn)
+      {
+        Console.WriteLine(x);
+      }
+
+      // >>>>>>>>>>>
+      int[] itemsSold = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+      Console.WriteLine(string.Join(", ", itemsSold));
+
+
+    }
 	}
 }
