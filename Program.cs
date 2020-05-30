@@ -66,18 +66,42 @@ namespace bangazon
         1967, 1969, 1972
       };
 
-      Console.WriteLine(string.Join(", ", yearsBorn));
+      // Console.WriteLine(string.Join(", ", yearsBorn));
 
-      foreach (int x in yearsBorn)
-      {
-        Console.WriteLine(x);
-      }
+      // foreach (int x in yearsBorn)
+      // {
+      //   Console.WriteLine(x);
+      // }
 
       // >>>>>>>>>>>
       int[] itemsSold = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-      Console.WriteLine(string.Join(", ", itemsSold));
+      // Console.WriteLine(string.Join(", ", itemsSold));
 
+      // >>>>>>>
+      List<string> planetList = new List<string>(){"Mercury", "Mars"};
+      planetList.Add("Jupiter");
+      planetList.Add("Saturn");
+
+      List<string> planetLast = new List<string>(){"Uranus", "Neptune"};
+      planetList.AddRange(planetLast);
+      Console.WriteLine("---------------\nPlanets:");
+      Console.WriteLine((string.Join(", ", planetList)) + ".");
+
+      List<string> venusEarth = new List<string>() { "Venus", "Earth" };
+      planetList.InsertRange(1, venusEarth);
+      Console.WriteLine("---------------\nMissing planets added:");
+      Console.WriteLine((string.Join(", ", planetList)) + ".");
+
+      planetList.Add("Pluto");
+      Console.WriteLine("---------------\nPluto added:");
+      Console.WriteLine((string.Join(", ", planetList)) + ".");
+
+      List<string> rockyPlanets = new List<string>() { };
+      rockyPlanets = planetList.GetRange(0,4);
+      Console.WriteLine("---------------\nRocky planets separated out:");
+      Console.WriteLine((string.Join(", ", rockyPlanets)) + ".");
 
     }
 	}
 }
+
